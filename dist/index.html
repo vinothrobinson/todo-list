@@ -7,26 +7,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Economica&family=Lobster&family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-   <div id="content">
-        <button class="new-todo">+</button>
-        <div class="todo-form">
-            <form id="new-todo-form" action="" method="post" style="display: none">
-                <label for="title">Title
-                    <input type="text" id="title" required>
-                </label>
-                <p class="label-wrapper"> <label for="description">Description </label> </p>
-                <textarea id="description" rows="4" cols="27"> </textarea>
-                <label for="dueDate">Due Date
-                    <input type="date" id="due-date" required>
-                </label>
-                <label for="priority">Priority
-                    <input type="number" id="priority">
-                </label>
-                <input id="submit" type="submit" value="Add Task">
-            </form>
-        </div>
-        <div class="task-display">
-
+    <div class="header"></div>
+    <div id="content">
+        <div class="side-bar"> </div>
+        <div class="main-content">
+            <button class="new-todo">+ Add Task</button>
+            <div class="todo-form">
+                <form id="new-todo-form" action="" method="post" style="display: none">
+                    <label for="title">Title
+                        <input type="text" id="title" required>
+                    </label>
+                    <p class="label-wrapper"> <label for="description">Description </label> </p>
+                    <textarea id="description" rows="4" cols="27"> </textarea>
+                    <label for="dueDate">Due Date
+                        <input type="date" id="due-date" required>
+                    </label>
+                    <label for="priority">Priority
+                        <input type="number" id="priority">
+                    </label>
+                    <input id="submit" type="submit" value="Add Task">
+                </form>
+            </div>
+            <div class="task-display"> </div>
         </div>
    </div>
    <script src="main.js"></script>
