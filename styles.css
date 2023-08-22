@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-#new-book-form {
+#new-todo-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@
     width: 40vh;
     height: 45vh;
     padding: 10px;
-    color: white;
+    background-color: white;
 }
 
 input {
@@ -32,9 +32,60 @@ input {
     text-align: left;
 }
 
-label {
+#description {
+    margin-bottom: 5px;
+}
+
+label, .label-wrapper {
     width: 15rem;
     margin-bottom: 15px;
     font-family: "Roboto";
     text-align: left;
+}
+
+.label-wrapper {
+    margin-bottom: 0px;
+}
+
+#submit {
+    text-align: center;
+}
+
+.new-todo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px black solid;
+    font-size: 20px;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.complete {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 1px black;
+}
+
+.title {
+    margin-left: 5px;
+}
+
+.date {
+    margin-left: 50%;
+}
+
+.description {
+    padding: 5px;
 }
