@@ -8,21 +8,26 @@
   </head>
   <body>
    <div id="content">
-    <form id="new-todo-form" action="" method="post">
-        <label for="title">Title
-            <input type="text" id="title" required>
-        </label>
-        <label for="description">Description
-            <input type="text" id="description" required>
-        </label>
-        <label for="dueDate">Due Date
-            <input type="date" id="due-date" required>
-        </label>
-        <label for="priority">Priority
-            <input type="number" id="priority">
-        </label>
-        <input type="submit" value="Add Task">
-    </form>
+        <button class="new-todo">+</button>
+        <div class="todo-form">
+            <form id="new-todo-form" action="" method="post" style="display: none">
+                <label for="title">Title
+                    <input type="text" id="title" required>
+                </label>
+                <p class="label-wrapper"> <label for="description">Description </label> </p>
+                <textarea id="description" rows="4" cols="27"> </textarea>
+                <label for="dueDate">Due Date
+                    <input type="date" id="due-date" required>
+                </label>
+                <label for="priority">Priority
+                    <input type="number" id="priority">
+                </label>
+                <input id="submit" type="submit" value="Add Task">
+            </form>
+        </div>
+        <div class="task-display">
+
+        </div>
    </div>
    <script src="main.js"></script>
   </body>
