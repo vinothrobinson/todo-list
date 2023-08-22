@@ -1,18 +1,6 @@
-let defaultTask = [];
-
-// Todo-List Item Constructor
-class TodoItem
-{
-    constructor(title, description, dueDate, priority) {
-        this.title = title;
-	    this.description = description;
-	    this.dueDate = dueDate;
-	    this.priority = priority;
-    }
-}
+import { addNewTask} from "./todo";
 
 // Creating the button to add a new task
-const container = document.querySelector("#content")
 const newTodo = document.querySelector(".new-todo");
 
 // Activates the form for filling out info about tasks
@@ -29,39 +17,6 @@ newTodo.addEventListener("click", function() {
         isHidden = true;
     }
 })
-
-// Takes the user input and creates a book and adds it to the library
-function addNewTask() {
-    let title = document.querySelector("#title").value;
-    let description = document.querySelector("#description").value;
-    let dueDate = document.querySelector("#due-date").value;
-    let priority = document.querySelector("#priority").value;
-
-    let newTodoItem = new TodoItem(title, description, dueDate, priority);
-    defaultTask.push(newTodoItem);
-    displayTask()
-}
-
-function displayTask() {
-    const tasks = document.querySelector(".task-display")
-    tasks.replaceChildren();
-    for (let i = 0; i < defaultTask.length; i++) {
-        // Overall container for book information
-        const task = document.createElement('div');
-        task.classList.add("task");
-        task.style.backgroundColor = "#d1d5db"
-        // Adding the elements of the book to the book element
-        task.innerHTML = `
-        <div class="header-section">
-            <button class="complete"></button>
-            <div class="title">${defaultTask[i].title}</div>
-            <div class="date">${defaultTask[i].dueDate}</div>
-        </div>
-        <div class="description">${defaultTask[i].description}</div>
-        `
-        tasks.appendChild(task);
-    }
-}
 
 document.querySelector("#new-todo-form").addEventListener("submit", function(event) {
     event.preventDefault();
