@@ -11,7 +11,21 @@
         <h1 class="site-name">Todo List</h1>
     </div>
     <div id="content">
-        <div class="side-bar"> </div>
+        <div class="side-bar"> 
+            <h1 class="project-page">Projects</h1>
+            <div class="project-display"> </div>
+            <div class="project-creation">
+                <div class="todo-form">
+                    <form id="new-project-form" action="" method="post" style="display: none">
+                        <label for="title">Title
+                            <input type="text" id="project-title" required>
+                        </label>
+                        <input id="project-submit" type="submit" value="Create Project">
+                    </form>
+                </div>
+                <button class="new-project">+ Add Project</button>
+            </div>
+        </div>
         <div class="main-content">
             <h1 class="home-page">Home</h1>
             <div class="task-display"> </div>
