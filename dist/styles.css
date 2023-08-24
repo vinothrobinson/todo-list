@@ -3,37 +3,50 @@
     padding: 0;
 }
 
+.header {
+    background-color: #22d3ee;
+    padding: 10px;
+}
+
+.site-name {
+    font-size: 2.2em;
+    font-family: "Roboto"
+}
+.side-bar {
+    height: auto;
+}
+
 .main-content {
     background-color: #a5f3fc;
-    height: 90vh;
+    height: auto;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    padding: 20px;
 }
 
 #new-todo-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     border: solid black 1px;
-    width: 40vh;
+    width: 40vw;
     height: 45vh;
-    padding: 10px;
+    padding: 20px;
     background-color: white;
 }
 
 input {
-    display: block;
+    display: flex;
     /* margin-bottom: 20px; */
-    width: 230px;
+    width: 40vw;
     height: 20px;
     text-align: left;
 }
 
 #description {
     margin-bottom: 5px;
+    width: 40vw;
 }
 
 label, .label-wrapper {
@@ -49,6 +62,8 @@ label, .label-wrapper {
 
 #submit {
     text-align: center;
+    display: block;
+    width: 10vw;
 }
 
 .new-todo {
@@ -56,18 +71,31 @@ label, .label-wrapper {
     border-radius: 10px;
     border: 1px black solid;
     font-size: 16px;
+    margin-top: 10px;
+}
+
+.task-display {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
 }
 
 .task {
     display: flex;
-    flex-direction: column;
-    width: 20vw;
+    margin: 5px;
+    padding: 10px;
 }
 
-.header-section {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
+.task-creation {
+    padding: 20px;
+}
+
+.home-page {
+    font-size: 2.5em;
+    font-family: "Roboto";
+    background-color: #22d3ee;
+    padding: 10px;
 }
 
 .complete {
@@ -77,16 +105,18 @@ label, .label-wrapper {
     border: solid 1px black;
 }
 
-.title {
-    margin-left: 5px;
-}
-
-.date {
-    margin-left: 50%;
-}
-
 .description {
-    padding: 5px;
+    white-space: pre-wrap;
+    overflow-wrap: normal;
+}
+
+.task-info {
+    width: 85%;
+    margin-left: 10px;
+}
+
+.title {
+    font-size: 1.2em;
 }
 
 body {
