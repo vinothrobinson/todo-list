@@ -7,28 +7,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Economica&family=Lobster&family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="header"></div>
+    <div class="header">
+        <h1 class="site-name">Todo List</h1>
+    </div>
     <div id="content">
         <div class="side-bar"> </div>
         <div class="main-content">
-            <button class="new-todo">+ Add Task</button>
-            <div class="todo-form">
-                <form id="new-todo-form" action="" method="post" style="display: none">
-                    <label for="title">Title
-                        <input type="text" id="title" required>
-                    </label>
-                    <p class="label-wrapper"> <label for="description">Description </label> </p>
-                    <textarea id="description" rows="4" cols="27"> </textarea>
-                    <label for="dueDate">Due Date
-                        <input type="date" id="due-date" required>
-                    </label>
-                    <label for="priority">Priority
-                        <input type="number" id="priority">
-                    </label>
-                    <input id="submit" type="submit" value="Add Task">
-                </form>
-            </div>
+            <h1 class="home-page">Home</h1>
             <div class="task-display"> </div>
+            <div class="task-creation">
+                <div class="todo-form">
+                    <form id="new-todo-form" action="" method="post" style="display: none">
+                        <label for="title">Title
+                            <input type="text" id="title" required>
+                        </label>
+                        <p class="label-wrapper"> <label for="description">Description (Optional) </label> </p>
+                        <textarea id="description" rows="4"></textarea>
+                        <label for="dueDate">Due Date
+                            <input type="date" id="due-date">
+                        </label>
+                        <label for="priority">Priority
+                            <input type="number" id="priority">
+                        </label>
+                        <input id="submit" type="submit" value="Create Task">
+                    </form>
+                </div>
+                <button class="new-todo">+ Add Task</button>
+            </div>
         </div>
    </div>
    <script src="main.js"></script>
