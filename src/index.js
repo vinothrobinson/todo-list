@@ -1,4 +1,5 @@
-import { addNewTask} from "./todo";
+import {addNewTask, removeTask, displayTask} from "./todo";
+import {addNewProject} from "./project"
 
 // Creating the button to add a new task
 const newTodo = document.querySelector(".new-todo");
@@ -21,6 +22,29 @@ newTodo.addEventListener("click", function() {
 document.querySelector("#new-todo-form").addEventListener("submit", function(event) {
     event.preventDefault();
     addNewTask();
+})
+
+// Creating the button to add a new task
+const newProject = document.querySelector(".new-project");
+
+// Activates the form for filling out info about tasks
+let isHiddenP = true;
+newProject.addEventListener("click", function() {
+    if (isHiddenP) {
+        const newProjectForm = document.querySelector("#new-project-form");
+        newProjectForm.style.display = "flex";
+        isHiddenP = false;
+    }
+    else {
+        const newProjectForm = document.querySelector("#new-project-form");
+        newProjectForm.style.display = "none";
+        isHiddenP = true;
+    }
+})
+
+document.querySelector("#new-project-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    addNewProject();
 })
 
 // This piece of code removes the "Confirm form resubmission" pop up
