@@ -1,4 +1,4 @@
-let defaultTask = [];
+let taskList = [];
 
 // Todo-List Item Constructor
 export class TodoItem
@@ -23,14 +23,14 @@ const addNewTask = () => {
     let priority = document.querySelector("#priority").value;
 
     let newTodoItem = new TodoItem(title, description, dueDate, priority);
-    defaultTask.push(newTodoItem);
+    taskList.push(newTodoItem);
     displayTask()
 }
 
 const displayTask = () => {
     const tasks = document.querySelector(".task-display")
     tasks.replaceChildren();
-    for (let i = 0; i < defaultTask.length; i++) {
+    for (let i = 0; i < taskList.length; i++) {
         // Overall container for book information
         const task = document.createElement('div');
         task.classList.add("task");
@@ -39,13 +39,20 @@ const displayTask = () => {
         task.innerHTML = `
         <div class="complete"></div>
         <div class="task-info">
-            <div class="title">${defaultTask[i].title}</div>
-            <div class="description">${defaultTask[i].description}</div>
+            <div class="title">${taskList[i].title}</div>
+            <div class="description">${taskList[i].description}</div>
         </div>
-        <div class="date">${defaultTask[i].dueDate}</div>
+        <div class="date">${taskList[i].dueDate}</div>
         `
         tasks.appendChild(task);
     }
+    let complete = document.querySelectorAll(".complete")
+    complete.forEach(function callback(c, index) {
+        c.addEventListener("click", function() {
+            taskList.splice(index, 1)
+            displayTask()
+        })
+    })
 }
 
 export {addNewTask, displayTask};
