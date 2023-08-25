@@ -1,4 +1,4 @@
-import {addNewTask, removeTask, displayTask} from "./todo";
+import {addNewTask} from "./todo";
 import {addNewProject} from "./project"
 
 // Creating the button to add a new task
