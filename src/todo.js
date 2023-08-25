@@ -12,7 +12,7 @@ export class TodoItem
 
 }
 
-// Takes the user input and creates a book and adds it to the library
+// Takes the user input and creates a task and adds it to the task list
 const addNewTask = () => {
     const form = document.querySelector("#new-todo-form");
     form.style.display = "none";
@@ -31,11 +31,11 @@ const displayTask = () => {
     const tasks = document.querySelector(".task-display")
     tasks.replaceChildren();
     for (let i = 0; i < taskList.length; i++) {
-        // Overall container for book information
+        // Overall container for task information
         const task = document.createElement('div');
         task.classList.add("task");
         task.style.backgroundColor = "#e2e8f0"
-        // Adding the elements of the book to the book element
+        // Adding the elements of the task to the task element
         task.innerHTML = `
         <div class="complete"></div>
         <div class="task-info">
