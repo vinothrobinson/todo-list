@@ -1,3 +1,4 @@
+/* Basic styling for main sections */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +26,7 @@
     padding: 20px;
 }
 
+/* Styling for the forms */
 #new-todo-form {
     display: flex;
     flex-direction: column;
@@ -83,6 +85,7 @@ label, .label-wrapper {
     width: 10vw;
 }
 
+/* Styling for the buttons that bring up the forms */
 .new-todo, .new-project {
     width: 10vw;
     border-radius: 10px;
@@ -91,6 +94,7 @@ label, .label-wrapper {
     margin-top: 10px;
 }
 
+/* Styling for the tasks and projects */
 .task-display {
     display: flex;
     flex-direction: column;
@@ -108,13 +112,22 @@ label, .label-wrapper {
     padding: 20px;
 }
 
-.home-page, .project-page {
+/* Styling for the text */
+.current-page, .project-page {
     font-size: 2.5em;
     font-family: "Roboto";
     background-color: #22d3ee;
     padding: 10px;
 }
 
+.project-page {
+    border-bottom: 2px solid black;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styling for task elements */
 .complete {
     width: 20px;
     height: 20px;
