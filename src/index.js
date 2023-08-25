@@ -47,6 +47,11 @@ document.querySelector("#new-project-form").addEventListener("submit", function(
     addNewProject();
 })
 
+document.querySelector(".home-button").addEventListener("click", function() {
+    let currentPage = document.querySelector(".current-page");
+    currentPage.innerHTML = "Home"
+})
+
 // This piece of code removes the "Confirm form resubmission" pop up
 if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
