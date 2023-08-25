@@ -14,6 +14,8 @@ const addNewProject = () => {
     const form = document.querySelector("#new-project-form");
     form.style.display = "none";
     let title = document.querySelector("#project-title").value;
+
+
     
     let newProjectItem = new ProjectItem(title);
     projectList.push(newProjectItem);
@@ -34,6 +36,20 @@ const displayProject = () => {
         `
         projects.appendChild(project);
     }
+    // Code to switch between different projects and view specific tasks
+    let projectItems = document.querySelectorAll(".project")
+    projectItems.forEach(function callback(p, index) {
+        p.addEventListener("click", function() {
+            let currentPage = document.querySelector(".current-page");
+            currentPage.innerHTML = `${projectList[index].title}`
+        })
+    })
+}
+
+function switchList(index) {
+    let currentPage = document.querySelector(".current-page");
+    console.log(currentPage)
+    currentPage.style.innerHTML = projectList[index].title
 }
 
 export {addNewProject, displayProject};
