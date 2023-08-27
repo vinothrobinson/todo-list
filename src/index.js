@@ -1,5 +1,5 @@
-import {addNewTask} from "./todo";
-import {addNewProject} from "./project"
+import {addNewTask, displayTask} from "./todo";
+import {addNewProject, addProjectTask} from "./project"
 
 // Creating the button to add a new task
 const newTodo = document.querySelector(".new-todo");
@@ -20,8 +20,16 @@ newTodo.addEventListener("click", function() {
 })
 
 document.querySelector("#new-todo-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    addNewTask();
+    let currentPage = document.querySelector(".current-page");
+    if (currentPage.innerHTML === "Home") {
+        event.preventDefault();
+        addNewTask();
+    }
+
+    else {
+        event.preventDefault();
+        addProjectTask();
+    }
 })
 
 // Creating the button to add a new task
@@ -50,6 +58,7 @@ document.querySelector("#new-project-form").addEventListener("submit", function(
 document.querySelector(".home-button").addEventListener("click", function() {
     let currentPage = document.querySelector(".current-page");
     currentPage.innerHTML = "Home"
+    displayTask();
 })
 
 // This piece of code removes the "Confirm form resubmission" pop up
