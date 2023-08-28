@@ -1,4 +1,4 @@
-import { taskList, TodoItem } from "./todo";
+import { taskList, TodoItem, displayTask } from "./todo";
 export let projectList = [];
 
 // Todo-List Item Constructor
@@ -35,6 +35,7 @@ const displayProject = () => {
         // Adding the elements of the book to the book element
         project.innerHTML = `
         <div class="title">${projectList[i].title}</div>
+        <div class="remove">X</div>
         `
         projects.appendChild(project);
     }
@@ -47,6 +48,27 @@ const displayProject = () => {
             displayProjectTasks(projectList[index].projectTasks)
         })
     })
+
+    let removeProjects = document.querySelectorAll(".remove")
+    removeProjects.forEach(function callback(r, index) {
+        r.addEventListener("click", function() {
+            removeProject(index)
+        })
+    })
+}
+
+const removeProject = (index) => {
+    let currentList = projectList[index].title
+    for (let i = 0; i < taskList.length; i++) {
+        if (taskList[i].projectName === currentList) {
+            taskList.splice(i, 1);
+        }
+    }
+    projectList.splice(index, 1);
+    displayProject()
+    let currentPage = document.querySelector(".current-page");
+    currentPage.innerHTML = "Home"
+    displayTask();
 }
 
 // Creates a task specific to the project, this task can be displayed in the Home tab as well.
