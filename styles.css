@@ -108,6 +108,19 @@ label, .label-wrapper {
     padding: 10px;
 }
 
+.project {
+    justify-content: space-between;
+}
+
+.remove {
+    background-color: #ef4444;
+    font-size: 1.2em;
+    width: 10%;
+    text-align: center;
+    border: 1px black solid;
+    font-family: "Roboto"
+}
+
 .task-creation {
     padding: 20px;
 }
@@ -133,6 +146,10 @@ label, .label-wrapper {
     height: 20px;
     border-radius: 50%;
     border: solid 1px black;
+}
+
+.complete:hover{
+    background-color: #86efac;
 }
 
 .description {
