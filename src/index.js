@@ -1,5 +1,6 @@
 import {addNewTask, displayTask} from "./todo";
-import {addNewProject, addProjectTask} from "./project"
+import {addNewProject, addProjectTask, displayProject} from "./project"
+import { storeLists, getLists } from "./storage";
 
 // Creating the button to add a new task
 const newTodo = document.querySelector(".new-todo");
@@ -65,3 +66,17 @@ document.querySelector(".home-button").addEventListener("click", function() {
 if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
+
+if(document.cookie.indexOf('mycookie')==-1) {
+    // The cookie doesn't exist. Create it now
+    document.cookie = 'mycookie=1';
+    getLists()
+    displayTask()
+    displayProject()
+}
+else {
+    // Not the first visit, so alert
+    getLists()
+    displayTask()
+    displayProject()
+}
