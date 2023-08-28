@@ -1,4 +1,5 @@
 import {projectList} from "./project";
+import { storeLists, getLists } from "./storage";
 export let taskList = [];
 
 // Todo-List Item Constructor
@@ -27,6 +28,7 @@ const addNewTask = () => {
 
     let newTodoItem = new TodoItem(title, description, dueDate, priority, projectName);
     taskList.push(newTodoItem);
+    storeLists()
     displayTask()
 }
 
@@ -54,6 +56,7 @@ const displayTask = () => {
         c.addEventListener("click", function(event) {
             if (taskList[index].projectName === "Home") {
                 taskList.splice(index, 1)
+                storeLists()
                 displayTask()
             }
             else { // Removes the task from the task list and project list
@@ -71,6 +74,7 @@ const displayTask = () => {
                 // console.log(currentList[currentTodoIndex])
                 taskList.splice(index, 1)
                 currentList.splice(currentTodoIndex, 1);
+                storeLists()
                 displayTask()
             }
         })
