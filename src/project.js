@@ -1,4 +1,5 @@
 import { taskList, TodoItem, displayTask } from "./todo";
+import { storeLists, getLists } from "./storage";
 export let projectList = [];
 
 // Todo-List Item Constructor
@@ -20,6 +21,7 @@ const addNewProject = () => {
 
     let newProjectItem = new ProjectItem(title, projectTasks);
     projectList.push(newProjectItem);
+    storeLists()
     displayProject()
 }
 
@@ -65,6 +67,7 @@ const removeProject = (index) => {
         }
     }
     projectList.splice(index, 1);
+    storeLists()
     displayProject()
     let currentPage = document.querySelector(".current-page");
     currentPage.innerHTML = "Home"
@@ -90,6 +93,7 @@ const addProjectTask = () => {
     // Assigning the task to the correct project
     projectList[index].projectTasks.push(newTodoItem);
     taskList.push(newTodoItem)
+    storeLists()
     displayProjectTasks(projectList[index].projectTasks)
 }
 
@@ -132,6 +136,7 @@ const displayProjectTasks = (projectTasks) => {
             let currentTodoIndex = currentList.findIndex(item => item.title === selectedTask.innerHTML)
             // console.log(currentList[currentTodoIndex])
             currentList.splice(currentTodoIndex, 1);
+            storeLists()
             displayProjectTasks(currentList)
         }) // The above code removes a task from both the task list and the project list
     })
