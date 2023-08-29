@@ -1,5 +1,6 @@
 import {projectList} from "./project";
 import { storeLists, getLists } from "./storage";
+import { isHidden } from ".";
 export let taskList = [];
 
 // Todo-List Item Constructor
@@ -25,6 +26,8 @@ const addNewTask = () => {
     if (dueDate === "") dueDate = "No Date";
     let priority = document.querySelector("#priority").value;
     let projectName = "Home" // Use to distinguish between tasks from different projects
+    document.getElementById("new-todo-form").reset();
+    isHidden = true;
 
     let newTodoItem = new TodoItem(title, description, dueDate, priority, projectName);
     taskList.push(newTodoItem);
@@ -39,7 +42,6 @@ const displayTask = () => {
         // Overall container for task information
         const task = document.createElement('div');
         task.classList.add("task");
-        task.style.backgroundColor = "#e2e8f0"
         // Adding the elements of the task to the task element
         task.innerHTML = `
         <div class="complete"></div>
