@@ -80,3 +80,10 @@ else {
     displayTask()
     displayProject()
 }
+
+window.onload = function() {
+    console.log("Onload function is being run")
+    getLists()
+    displayTask()
+    displayProject()
+}
