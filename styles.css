@@ -5,13 +5,14 @@
 }
 
 .header {
-    background-color: #22d3ee;
+    background-color: #34d399;
     padding: 10px;
+    text-align: center;
 }
 
 .site-name {
-    font-size: 2.2em;
-    font-family: "Roboto"
+    font-size: 3.0em;
+    font-family: "Economica";
 }
 .side-bar {
     height: auto;
@@ -19,7 +20,7 @@
 }
 
 .main-content {
-    background-color: #a5f3fc;
+    background-color: #ececec;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -102,23 +103,38 @@ label, .label-wrapper {
     padding: 10px;
 }
 
-.task, .project {
+.task, .project, .home-button{
     display: flex;
     margin: 5px;
     padding: 10px;
+    background-color: white;
+    border: solid 0.5px black;
 }
 
-.project {
+.project, .home-button {
     justify-content: space-between;
+    background-color: #ececec;
+}
+
+.home-button {
+    font-size: 1.2em;
+}
+
+.project:hover, .home-button:hover {
+    background-color: #dedcdc;
 }
 
 .remove {
-    background-color: #ef4444;
-    font-size: 1.2em;
-    width: 10%;
+    border-radius: 50%;
+    border: solid 1px black;
+    color: rgb(227, 227, 227);
+    width: 20px;
     text-align: center;
-    border: 1px black solid;
     font-family: "Roboto"
+}
+
+.remove:hover {
+    background-color: #ef4444;
 }
 
 .task-creation {
@@ -129,8 +145,12 @@ label, .label-wrapper {
 .current-page, .project-page {
     font-size: 2.5em;
     font-family: "Roboto";
-    background-color: #22d3ee;
+    background-color: #34d399;
     padding: 10px;
+}
+
+.current-page {
+    border: solid 0.5px black;
 }
 
 .project-page {
@@ -175,5 +195,4 @@ body {
 #content {
     display: grid;
     grid-template-columns: 20% 80%;
-    border: 1px solid black;
 }
