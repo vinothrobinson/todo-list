@@ -1,5 +1,5 @@
-import {addNewTask, displayTask} from "./todo";
-import {addNewProject, addProjectTask, displayProject} from "./project"
+import {addNewTask, displayTask, taskList} from "./todo";
+import {addNewProject, addProjectTask, displayProject, projectList} from "./project"
 import { storeLists, getLists } from "./storage";
 
 // Creating the button to add a new task
@@ -67,6 +67,7 @@ if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
 
+/*
 if(document.cookie.indexOf('mycookie')==-1) {
     // The cookie doesn't exist. Create it now
     document.cookie = 'mycookie=1';
@@ -80,10 +81,16 @@ else {
     displayTask()
     displayProject()
 }
+*/
 
 window.onload = function() {
     console.log("Onload function is being run")
-    getLists()
+    taskList = getLists()[0]
+    projectList = getLists()[1]
+    if (taskList ===  null || projectList === null) {
+        taskList = [];
+        projectList = [];
+    }
     displayTask()
     displayProject()
 }
