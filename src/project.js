@@ -33,11 +33,10 @@ const displayProject = () => {
         // Overall container for book information
         const project = document.createElement('div');
         project.classList.add("project");
-        project.style.backgroundColor = "#e2e8f0"
         // Adding the elements of the book to the book element
         project.innerHTML = `
         <div class="title">${projectList[i].title}</div>
-        <div class="remove">X</div>
+        <div class="remove"></div>
         `
         projects.appendChild(project);
     }
@@ -88,6 +87,7 @@ const addProjectTask = () => {
     if (dueDate === "") dueDate = "No Date";
     let priority = document.querySelector("#priority").value;
     let projectName = projectList[index].title
+    document.getElementById("new-todo-form").reset();
 
     let newTodoItem = new TodoItem(title, description, dueDate, priority, projectName);
     // Assigning the task to the correct project
@@ -106,7 +106,6 @@ const displayProjectTasks = (projectTasks) => {
         // Overall container for task information
         const task = document.createElement('div');
         task.classList.add("task");
-        task.style.backgroundColor = "#e2e8f0"
         // Adding the elements of the task to the task element
         task.innerHTML = `
         <div class="complete p-complete"></div>
