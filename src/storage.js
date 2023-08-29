@@ -1,5 +1,6 @@
 import { taskList } from "./todo";
 import { projectList } from "./project";
+import 'https://tomashubelbauer.github.io/github-pages-local-storage/index.js';
 
 const storeLists = () => {
     let tasks = JSON.stringify(taskList);
