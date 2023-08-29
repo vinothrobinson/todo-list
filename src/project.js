@@ -1,5 +1,6 @@
 import { taskList, TodoItem, displayTask } from "./todo";
 import { storeLists, getLists } from "./storage";
+import { isHidden, isHiddenP } from ".";
 export let projectList = [];
 
 // Todo-List Item Constructor
@@ -16,6 +17,7 @@ export class ProjectItem
 const addNewProject = () => {
     const form = document.querySelector("#new-project-form");
     form.style.display = "none";
+    isHiddenP = true;
     let title = document.querySelector("#project-title").value;
     let projectTasks = [];
 
@@ -77,6 +79,7 @@ const removeProject = (index) => {
 const addProjectTask = () => {
     const form = document.querySelector("#new-todo-form");
     form.style.display = "none";
+    isHidden = true;
 
     let currentPage = document.querySelector(".current-page");
     let index =  projectList.findIndex(item => item.title === currentPage.innerHTML);
