@@ -1,6 +1,5 @@
 import { taskList } from "./todo";
 import { projectList } from "./project";
-import 'https://tomashubelbauer.github.io/github-pages-local-storage/index.js';
 
 const storeLists = () => {
     let tasks = JSON.stringify(taskList);
@@ -14,6 +13,8 @@ const getLists = () => {
     let projectString = localStorage.getItem("projects");
     taskList = JSON.parse(taskString)
     projectList = JSON.parse(projectString)
+    let listArray = [taskList, projectList]
+    return listArray
 }
 
 export {storeLists, getLists}
