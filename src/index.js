@@ -6,7 +6,7 @@ import { storeLists, getLists } from "./storage";
 const newTodo = document.querySelector(".new-todo");
 
 // Activates the form for filling out info about tasks
-let isHidden = true;
+export let isHidden = true;
 newTodo.addEventListener("click", function() {
     if (isHidden) {
         const newTodoForm = document.querySelector("#new-todo-form");
@@ -37,7 +37,7 @@ document.querySelector("#new-todo-form").addEventListener("submit", function(eve
 const newProject = document.querySelector(".new-project");
 
 // Activates the form for filling out info about tasks
-let isHiddenP = true;
+export let isHiddenP = true;
 newProject.addEventListener("click", function() {
     if (isHiddenP) {
         const newProjectForm = document.querySelector("#new-project-form");
