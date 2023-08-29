@@ -4,7 +4,8 @@
   "description": "This is a JavaScript implementation of a Todo-List, which is enhanced by webpack features for better design flow.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
